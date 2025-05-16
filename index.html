@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPA & CGPA Predictor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>GPA & CGPA Predictor</h1>
+    <div class="toggle-buttons">
+      <button id="gpaBtn" class="active">GPA Predictor</button>
+      <button id="cgpaBtn">CGPA Predictor</button>
+    </div>
+
+    <!-- GPA Calculator Section -->
+    <div id="gpaSection" class="section">
+      <h2>GPA Calculator</h2>
+      <div class="subject-form">
+        <label>Number of Subjects:</label>
+        <input type="number" id="numSubjects" min="1" />
+        <button onclick="generateSubjectInputs()">Add Subjects</button>
+      </div>
+      <form id="subjectInputs"></form>
+      <button onclick="calculateGPA()">Calculate GPA</button>
+      <div id="gpaResultContainer">
+        <div id="gpaResult" class="result"></div>
+        <button onclick="exportGPA()">Export GPA to PDF</button>
+      </div>
+    </div>
+
+    <!-- CGPA Calculator Section -->
+    <div id="cgpaSection" class="section hidden">
+      <h2>CGPA Calculator</h2>
+      <label>Total Completed Semesters:</label>
+      <input type="number" id="totalSems" min="1" />
+      <div id="cgpaInputs"></div>
+      <button onclick="generateCGPAInputs()">Add Semester Grades</button>
+      <button onclick="calculateCGPA()">Calculate CGPA</button>
+      <div id="cgpaResultContainer">
+        <div id="cgpaResult" class="result"></div>
+        <button onclick="exportCGPA()">Export CGPA to PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>Created by N Lohith Reddy</footer>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</body>
+</html>
